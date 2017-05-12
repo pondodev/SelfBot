@@ -23,7 +23,7 @@ bot.on("message", message =>
 
     var contents = message.content.split(" ");
 
-    if (!contents[0].startsWith("!")) return; // If the message isn't a command just skip it
+    if (!contents[0].startsWith(config.prefix)) return; // If the message isn't a command just skip it
 
     var commandName = contents[0].substring(1);
 
@@ -82,6 +82,30 @@ bot.on("message", message =>
                 });
         }
 
+        break;
+
+    case "img": // Posts image from selection
+        message.delete();
+
+        switch (contents[1])
+        {
+        case "tuturu": // Tuturu image
+            message.channel.sendFile("./images/tuturu.png");
+            break;
+
+        case "lewd": // "Stop posting lewd things!" image
+            message.channel.sendFile("./images/lewd.png");
+            break;
+
+        case "hacker": // Hacker gif
+            message.channel.sendFile("./images/hacking.gif");
+            break;
+        }
+        break;
+
+    case "lenny": // ( ͡° ͜ʖ ͡°)
+        message.delete();
+        message.channel.send("​( ͡° ͜ʖ ͡°)");
         break;
 
     default: // If we don't recognise the command, just break
