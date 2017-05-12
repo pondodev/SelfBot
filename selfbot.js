@@ -12,6 +12,14 @@ function construct(fromMessage)
     return temp;
 }
 
+function clean (text)
+{
+    if (typeof(text) === "string")
+        return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+    else
+        return text;
+}
+
 bot.on("ready", () =>
 {
     console.log("Junkrat primed and ready!");
@@ -89,16 +97,80 @@ bot.on("message", message =>
 
         switch (contents[1])
         {
-        case "tuturu": // Tuturu image
+        case "tuturu": // Tuturu!~
             message.channel.sendFile("./images/tuturu.png");
             break;
 
-        case "lewd": // "Stop posting lewd things!" image
+        case "lewd": // "Stop posting lewd things!"
             message.channel.sendFile("./images/lewd.png");
             break;
 
-        case "hacker": // Hacker gif
+        case "hacker": // HACK THE PLANET
             message.channel.sendFile("./images/hacking.gif");
+            break;
+
+        case "dab": // Here come dab boi!
+            message.channel.sendFile("./images/dabboi.jpg");
+            break;
+
+        case "thinking": // When you need to think *real* hard
+            message.channel.sendFile("./images/thinking.png");
+            break;
+
+        case "mystery": // IT IS A MYSTERY
+            message.channel.sendFile("./images/mystery.gif");
+            break;
+
+        case "whynot": // Why not Octodad?
+            message.channel.sendFile("./images/whynot.png");
+            break;
+
+        case "dipshit": // Listen here, dipshit
+            message.channel.sendFile("./images/dipshit.png");
+            break;
+
+        case "lyin": // Why you always lyin'?
+            message.channel.sendFile("./images/lyin.png");
+            break;
+
+        case "dewit": // Dew it.
+            message.channel.sendFile("./images/dewit.jpg");
+            break;
+
+        case "oxenfree": // OXENFREE EST OPTIME
+            message.channel.sendFile("./images/oxenfree.jpg");
+            break;
+
+        case "stop": // STOP! JUST. STOP!
+            message.channel.sendFile("./images/stop.gif");
+            break;
+
+        case "idontgetit": // Oh I get it!
+            message.channel.sendFile("./images/idontgetit.gif");
+            break;
+
+        case "jesus": // ...Jesus
+            message.channel.sendFile("./images/jesus.gif");
+            break;
+
+        case "mint": // When it's on point
+            message.channel.sendFile("./images/mint.jpg");
+            break;
+
+        case "favourite": // Oh... My favourite...
+            message.channel.sendFile("./images/favourite.gif");
+            break;
+
+        case "wat": // ...wat
+            message.channel.sendFile("./images/wat.jpg");
+            break;
+
+        case "???": // ???
+            message.channel.sendFile("./images/uwot.png");
+            break;
+
+        case "questions": // I have several questions
+            message.channel.sendFile("./images/questions.gif");
             break;
         }
         break;
@@ -106,6 +178,23 @@ bot.on("message", message =>
     case "lenny": // ( ͡° ͜ʖ ͡°)
         message.delete();
         message.channel.send("​( ͡° ͜ʖ ͡°)");
+        break;
+
+    case "eval": // Evaluate javascript
+        try
+        {
+            var code = contents.join(" ");
+            var evaled = eval(code);
+
+            if (typeof evaled !== "string")
+                evaled = require("util").inspect(evaled);
+
+            message.channel.send(clean(evaled), {code:"xl"});
+        }
+        catch (err)
+        {
+            message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+        }
         break;
 
     default: // If we don't recognise the command, just break
