@@ -12,14 +12,6 @@ function construct(fromMessage)
     return temp;
 }
 
-function clean (text)
-{
-    if (typeof(text) === "string")
-        return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-    else
-        return text;
-}
-
 bot.on("ready", () =>
 {
     console.log("Junkrat primed and ready!");
@@ -37,6 +29,36 @@ bot.on("message", message =>
 
     switch(commandName)
     {
+    case "prune": // Prune text channels. Requires manage messages perms
+        // Get the amount of messages we want to prune...
+        let messageCount = parseInt(contents[1]);
+        message.channel.fetchMessages({
+            limit: 100
+        })
+
+        // ...then delete them
+        .then(messages =>
+        {
+            let msg_array = messages.array();
+            msg_array.length = messageCount + 1;
+            msg_array.map(m => m.delete().catch(console.error));
+        });
+
+        // Display a complete message
+        message.channel.send("",
+            {
+                embed: {
+                    color: 0x00FF00,
+                    description: "Prune complete!",
+                    timestamp: new Date(),
+                    footer: {
+                        icon_url: bot.user.avatarURL,
+                        text: "Brought to you by p0isonedtechtips™"
+                    }
+                }
+            });
+        break;
+
     case "quoteme": // Quotes a message said by this user
         message.delete();
         message.channel.send("",
@@ -180,21 +202,9 @@ bot.on("message", message =>
         message.channel.send("​( ͡° ͜ʖ ͡°)");
         break;
 
-    case "eval": // Evaluate javascript
-        try
-        {
-            var code = contents.join(" ");
-            var evaled = eval(code);
-
-            if (typeof evaled !== "string")
-                evaled = require("util").inspect(evaled);
-
-            message.channel.send(clean(evaled), {code:"xl"});
-        }
-        catch (err)
-        {
-            message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-        }
+    case "shrug": // ¯\_(ツ)_/¯
+        message.delete();
+        message.channel.send("¯\\_(ツ)_/¯");
         break;
 
     default: // If we don't recognise the command, just break

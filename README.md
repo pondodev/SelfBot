@@ -6,7 +6,7 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
 - **~quoteme [text]** Will spit out `text` inside an embed
 - **~flipcoin** Will give you a coin flip
 - **~lenny** Will give you the lenny donger
-- **~eval [js code]** Will evaluate js code. WOULD NOT RECCOMEND USING FOR NOW
+- **~shrug** Will give you the shrug donger
 - **~img [imgName]** Will send the specified image. Current images supported are:
   - tuturu
   - lewd
