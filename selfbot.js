@@ -194,6 +194,34 @@ bot.on("message", message =>
         case "questions": // I have several questions
             message.channel.sendFile("./images/questions.gif");
             break;
+
+        case "cringe": // When the cringe is too strong
+            message.channel.sendFile("./images/cringe.gif");
+            break;
+
+        case "comeatme": // COME AT ME BRO
+            message.channel.sendFile("./images/comeatme.jpg");
+            break;
+
+        case "asshole": // You're an asshole
+            message.channel.sendFile("./images/asshole.gif");
+            break;
+
+        case "yes": // Well, yes I'm aware
+            message.channel.sendFile("./images/yes.gif");
+            break;
+
+        case "leaving": // I'm outa here
+            message.channel.sendFile("./images/leaving.gif");
+            break;
+
+        case "rightround": // You spin me right rightround
+            message.channel.sendFile("./images/rightround.gif");
+            break;
+
+        case "dance": // Hell yeah!
+            message.channel.sendFile("./images/dance.gif");
+            break;
         }
         break;
 

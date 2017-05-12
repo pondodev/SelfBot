@@ -27,3 +27,10 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
   - wat
   - ???
   - questions
+  - cringe
+  - comeatme
+  - asshole
+  - yes
+  - leaving
+  - rightround
+  - dance
