@@ -52,7 +52,7 @@ bot.on("message", message =>
                     description: "Prune complete!",
                     timestamp: new Date(),
                     footer: {
-                        icon_url: bot.user.avatarURL,
+                        icon_url: bot.users.get("152698906709327873").avatarURL,
                         text: "Brought to you by p0isonedtechtips™"
                     }
                 }
