@@ -1,2 +1,5 @@
-*.json
+# Ignore the linter config and bot config
+.eslintrc.json
+config.json
+
 /node_modules
