@@ -222,6 +222,10 @@ bot.on("message", message =>
         case "dance": // Hell yeah!
             message.channel.sendFile("./images/dance.gif");
             break;
+
+        case "ih8u": // I HATE YOU!
+            message.channel.sendFile("./images/ih8u.gif");
+            break;
         }
         break;
 
