@@ -9,5 +9,5 @@ pause
 @echo on
 @echo Installing discord.js
 @echo off
-npm install discord.js
+npm install --save discord.js
 pause
