@@ -40,3 +40,4 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
   - leaving
   - rightround
   - dance
+  - ih8u
