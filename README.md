@@ -44,3 +44,9 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
   - rightround
   - dance
   - ih8u
+  - notimpressed
+  - moist
+  - emokylo
+  - nod
+  - chosenone
+  - capthumbs

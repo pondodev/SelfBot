@@ -226,6 +226,30 @@ bot.on("message", message =>
         case "ih8u": // I HATE YOU!
             message.channel.sendFile("./images/ih8u.gif");
             break;
+
+        case "notimpressed": // When you're not feeling all too impressed
+            message.channel.sendFile("./images/notimpressed.jpg");
+            break;
+
+        case "moist": // ;)
+            message.channel.sendFile("./images/moist.png");
+            break;
+
+        case "emokylo": // Nuff said
+            message.channel.sendFile("./images/emokylo.gif");
+            break;
+
+        case "nod": // Yeah... Yeah. YEAH!
+            message.channel.sendFile("./images/nod.gif");
+            break;
+
+        case "chosenone": // YOU WERE THE CHOSEN ONE!
+            message.channel.sendFile("./images/chosenone.gif");
+            break;
+
+        case "capthumbs":
+            message.channel.sendFile("./images/capthumbs.gif");
+            break;
         }
         break;
 
