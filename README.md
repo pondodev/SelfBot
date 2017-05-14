@@ -1,6 +1,9 @@
 # SelfBot
 This is a selfbot I use on my personal account. It's mostly for learning purposes, but I also have a lot of images and other misc commands loaded in for use so that I can do things like post commonly used images easily or to post dongers without needing to copy paste them.
 
+## WARNING
+Before using my selfbot in a server, make sure that you're not breaking any rules. I test my bot to make sure it doesn't spam shit or do anything overly annoying on it's own. If you edit the code in such a way that causes you to get in trouble it's not my fault, and if you get banned for use of a selfbot then it is also not my fault. **YOU USE THIS BOT AT YOUR OWN RISK!** If you accept these conditions, then carry on.
+
 ### Setup
 I've tried making setting this bot up as simple as possible, but there's some stuff you'll need to do on your own to get this working.
 
