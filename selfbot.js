@@ -4,8 +4,10 @@ const bot = new Discord.Client();
 
 function construct(fromMessage)
 {
-    var temp = "";
-    for (var i = 1; i < fromMessage.length; i++)
+    var temp = fromMessage[1];
+    if (fromMessage.length == 2) return temp;
+
+    for (var i = 2; i < fromMessage.length; i++)
     {
         temp += " " + fromMessage[i];
     }
@@ -263,13 +265,13 @@ bot.on("message", message =>
         message.channel.send("¯\\_(ツ)_/¯");
         break;
 
-    case "getAvatar":
+    case "getAvatar": // Get's the avatar of the specified user. Do note it works off username, not tag, ID, or mention
         try
         {
             const avatarEmbed = new Discord.RichEmbed()
-                .setTitle(contents[1] + "'s avatar")
-                .setDescription("[Direct link](" + bot.users.find("username", contents[1]).avatarURL + ")")
-                .setImage(bot.users.find("username", contents[1]).avatarURL);
+                .setTitle(construct(contents) + "'s avatar")
+                .setDescription("[Direct link](" + bot.users.find("username", construct(contents)).avatarURL + ")")
+                .setImage(bot.users.find("username", construct(contents)).avatarURL);
             message.channel.send({embed: avatarEmbed});
         }
         catch (e)
