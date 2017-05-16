@@ -263,6 +263,27 @@ bot.on("message", message =>
         message.channel.send("¯\\_(ツ)_/¯");
         break;
 
+    case "getAvatar":
+        try
+        {
+            const avatarEmbed = new Discord.RichEmbed()
+                .setTitle(contents[1] + "'s avatar")
+                .setDescription("[Direct link](" + bot.users.find("username", contents[1]).avatarURL + ")")
+                .setImage(bot.users.find("username", contents[1]).avatarURL);
+            message.channel.send({embed: avatarEmbed});
+        }
+        catch (e)
+        {
+            message.channel.send("",
+                {
+                    embed: {
+                        description: "ERROR: User not found!",
+                        color: 0xFF0000
+                    }
+                });
+        }
+        break;
+
     default: // If we don't recognise the command, just break
         break;
     }
