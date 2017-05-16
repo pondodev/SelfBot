@@ -14,6 +14,11 @@ function construct(fromMessage)
     return temp;
 }
 
+function commandDebug(command)
+{
+    console.log(command[0] + " invoked | " + new Date());
+}
+
 bot.on("ready", () =>
 {
     console.log("Junkrat primed and ready!");
@@ -32,6 +37,7 @@ bot.on("message", message =>
     switch(commandName)
     {
     case "prune": // Prune text channels. Requires manage messages perms
+        commandDebug(contents);
         // Get the amount of messages we want to prune...
         let messageCount = parseInt(contents[1]);
         message.channel.fetchMessages({
@@ -62,6 +68,7 @@ bot.on("message", message =>
         break;
 
     case "quoteme": // Quotes a message said by this user
+        commandDebug(contents);
         message.delete();
         message.channel.send("",
             {
@@ -84,6 +91,7 @@ bot.on("message", message =>
         break;
 
     case "flipcoin": // Flips a coin
+        commandDebug(contents);
         if (Math.floor(Math.random() * (2 + 1)) == 1)
         {
             message.channel.send("",
@@ -117,6 +125,7 @@ bot.on("message", message =>
         break;
 
     case "img": // Posts image from selection
+        commandDebug(contents);
         message.delete();
 
         switch (contents[1])
@@ -252,20 +261,26 @@ bot.on("message", message =>
         case "capthumbs":
             message.channel.sendFile("./images/capthumbs.gif");
             break;
+
+        default:
+            console.log("Unknown image!");
         }
         break;
 
     case "lenny": // ( ͡° ͜ʖ ͡°)
+        commandDebug(contents);
         message.delete();
         message.channel.send("​( ͡° ͜ʖ ͡°)");
         break;
 
     case "shrug": // ¯\_(ツ)_/¯
+        commandDebug(contents);
         message.delete();
         message.channel.send("¯\\_(ツ)_/¯");
         break;
 
     case "getAvatar": // Get's the avatar of the specified user. Do note it works off username, not tag, ID, or mention
+        commandDebug(contents);
         try
         {
             const avatarEmbed = new Discord.RichEmbed()
@@ -287,6 +302,7 @@ bot.on("message", message =>
         break;
 
     default: // If we don't recognise the command, just break
+        console.log("Command not found!");
         break;
     }
 });
