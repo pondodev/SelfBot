@@ -11,6 +11,10 @@ pause
 @echo off
 npm install --save discord.js
 @echo on
+@echo Installing cowsay
+@echo off
+npm install cowsay 
+@echo on
 @echo Creating start.bat
 @echo off
 @echo node selfbot.js>start.bat

@@ -16,6 +16,7 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
 - **~lenny** Will give you the lenny donger
 - **~shrug** Will give you the shrug donger
 - **~prune [# of messages]** Will delete the specified amount of messages given. Do note, you need manage messages perms for this to work
+- **~cowsay [text]** Will make a cow say whatever you want
 - **~img [imgName]** Will send the specified image. Current images supported are:
   - tuturu
   - lewd

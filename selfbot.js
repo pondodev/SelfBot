@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const cowsay = require("cowsay");
 const config = require("./config.json");
 const bot = new Discord.Client();
 
@@ -299,6 +300,24 @@ bot.on("message", message =>
                     }
                 });
         }
+        break;
+
+    case "cowsay":
+        try
+        {
+            message.channel.send("", {embed:
+            {
+                description: "```" + cowsay.say({text: construct(contents), W: 25}) + "```",
+            }});
+        }
+        catch (e)
+        {
+            message.channel.send("", {embed:
+            {
+                description: "```" + cowsay.say({text: "Nice input, dumbass"}) + "```"
+            }});
+        }
+
         break;
 
     default: // If we don't recognise the command, just break
