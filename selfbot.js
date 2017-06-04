@@ -200,7 +200,7 @@ bot.on("message", message =>
             break;
 
         case "???": // ???
-            message.channel.sendFile("./images/uwot.png");
+            message.channel.sendFile("./images/uwot.jpg");
             break;
 
         case "questions": // I have several questions
@@ -263,6 +263,22 @@ bot.on("message", message =>
             message.channel.sendFile("./images/capthumbs.gif");
             break;
 
+        case "chinchong":
+            message.channel.sendFile("./images/chinchong.png");
+            break;
+
+        case "joke":
+            message.channel.sendFile("./images/joke.png");
+            break;
+
+        case "emotions":
+            message.channel.sendFile("./images/emotions.gif");
+            break;
+
+        case "bossthumbs":
+            message.channel.sendFile("./images/bossthumbs.gif");
+            break;
+
         default:
             console.log("Unknown image!");
         }
@@ -318,6 +334,19 @@ bot.on("message", message =>
             }});
         }
 
+        break;
+
+    case "space": // Here we'll be replicating text to look like t h i s
+        message.delete();
+        var messageStr = construct(contents).split("");
+        var temp = messageStr[0] + " ";
+
+        for (var i = 1; i < messageStr.length; i++)
+        {
+            temp += messageStr[i] + " ";
+        }
+
+        message.channel.send(temp);
         break;
 
     default: // If we don't recognise the command, just break
