@@ -17,6 +17,7 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
 - **~shrug** Will give you the shrug donger
 - **~prune [# of messages]** Will delete the specified amount of messages given. Do note, you need manage messages perms for this to work
 - **~cowsay [text]** Will make a cow say whatever you want
+- **~getAvatar [username]** Will give you the avatar of a given user (still under development)
 - **~space [text]** Will make your text a e s t h e t i c
 - **~img [imgName]** Will send the specified image. Current images supported are:
   - tuturu
