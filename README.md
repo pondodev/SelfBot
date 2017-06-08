@@ -57,3 +57,4 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
   - joke
   - emotions
   - bossthumbs
+  - hug

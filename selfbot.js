@@ -279,6 +279,10 @@ bot.on("message", message =>
             message.channel.sendFile("./images/bossthumbs.gif");
             break;
 
+        case "hug":
+            message.channel.sendFile("./images/hug.gif");
+            break;
+
         default:
             console.log("Unknown image!");
         }
