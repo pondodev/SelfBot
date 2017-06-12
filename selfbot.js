@@ -323,6 +323,7 @@ bot.on("message", message =>
         break;
 
     case "cowsay":
+        commandDebug(contents);
         try
         {
             message.channel.send("", {embed:
@@ -341,6 +342,7 @@ bot.on("message", message =>
         break;
 
     case "space": // Here we'll be replicating text to look like t h i s
+        commandDebug(contents);
         message.delete();
         var messageStr = construct(contents).split("");
         var temp = messageStr[0] + " ";
@@ -351,6 +353,49 @@ bot.on("message", message =>
         }
 
         message.channel.send(temp);
+        break;
+
+    case "dongerMeDaddy": // Posts a random donger for your memeing pleasure
+        commandDebug(contents);
+        message.delete();
+        var dongers = [
+            "╰། ◉ ◯ ◉ །╯",
+            "ԅ( ͒ ۝ ͒ )ᕤ",
+            "╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ",
+            "┌༼◉ل͟◉༽┐",
+            "໒( , ⊙ – ⊙ , )७",
+            "ᕕ( ՞ ᗜ ՞ )ᕗ",
+            "☆*:. o(≧▽≦)o .:*☆",
+            "ᕙᓄ(☉ਊ☉)ᓄᕗ",
+            "(V●ᴥ●V)",
+            "ᕦ( ̿ ﹏ ̿ )ᕤ",
+            "ᕙ[  ͒ ﹏ ͒  ]ᕗ",
+            "(∩╹□╹∩)",
+            "s( ^ ‿ ^)-b",
+            "s( ^ ‸ ^)-p",
+            "ლ( ◕ 益 ◕ ) ლ",
+            "(╭ರ_⊙)",
+            "(╭ರᴥ•́)",
+            "(⊙ᗜ⊙)",
+            "༼つ ◕_◕ ༽つ",
+            "ʕ⊙ᴥ⊙ʔ",
+            "ᕕ( ཀ ʖ̯ ཀ)ᕗ",
+            "╰(◕ᗜ◕)╯",
+            "໒( ◑ w ◑ )७",
+            "ᕕ(◉Д◉ )ᕗ",
+            "(✿ ◕ᗜ◕)━♫.*･｡ﾟ",
+            "╰(˵ヘωヘ✿)╯",
+            "ᕕ(⌐■_■)ᕗ ♪♬",
+            "(ᕗ ͠°  ਊ ͠° )ᕗ",
+            "╰( ◕ ᗜ ◕ )╯",
+            "(-_-｡)",
+            "ԅ༼ . º ʖ̯ º . ༽ง",
+            "╰(✿˙ᗜ˙)੭━☆ﾟ.*･｡ﾟ",
+            "d–(^ ‿ ^ )z",
+            "(つ°ヮ°)つ"
+        ];
+
+        message.channel.send(dongers[Math.floor(Math.random() * (dongers.length - 1))]);
         break;
 
     default: // If we don't recognise the command, just break
