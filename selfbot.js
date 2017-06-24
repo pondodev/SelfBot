@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const cowsay = require("cowsay");
+const figlet = require("figlet");
 const config = require("./config.json");
 const bot = new Discord.Client();
 
@@ -283,6 +284,18 @@ bot.on("message", message =>
             message.channel.sendFile("./images/hug.gif");
             break;
 
+        case "panic":
+            message.channel.sendFile("./images/panic.gif");
+            break;
+
+        case "nonono":
+            message.channel.sendFile("./images/nonono.gif");
+            break;
+
+        case "ree":
+            message.channel.sendFile("./images/ree.jpg");
+            break;
+
         default:
             console.log("Unknown image!");
         }
@@ -326,6 +339,7 @@ bot.on("message", message =>
         commandDebug(contents);
         try
         {
+            message.delete();
             message.channel.send("", {embed:
             {
                 description: "```" + cowsay.say({text: construct(contents), W: 25}) + "```",
@@ -333,6 +347,7 @@ bot.on("message", message =>
         }
         catch (e)
         {
+            message.delete();
             message.channel.send("", {embed:
             {
                 description: "```" + cowsay.say({text: "Nice input, dumbass"}) + "```"
@@ -396,6 +411,25 @@ bot.on("message", message =>
         ];
 
         message.channel.send(dongers[Math.floor(Math.random() * (dongers.length - 1))]);
+        break;
+
+    case "figlet":
+        commandDebug(contents);
+        figlet(construct(contents), function(err, data){
+            if (err)
+            {
+                message.channel.send("",
+                    {
+                        embed:
+                        {
+                            description: "ERROR: Something fucked up",
+                            color: 0xFF0000
+                        }
+                    });
+            }
+            message.channel.send("```" + data + "```");
+        });
+
         break;
 
     default: // If we don't recognise the command, just break

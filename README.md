@@ -20,6 +20,7 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
 - **~getAvatar [username]** Will give you the avatar of a given user (still under development)
 - **~space [text]** Will make your text a e s t h e t i c
 - **~dongerMeDaddy** Will give you a random donger
+- **~figlet [text]** Will turn your text into ASCII art
 - **~img [imgName]** Will send the specified image. Current images supported are:
   - tuturu
   - lewd
@@ -59,3 +60,5 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
   - emotions
   - bossthumbs
   - hug
+  - panic
+  - nonono

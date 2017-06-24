@@ -13,7 +13,11 @@ npm install --save discord.js
 @echo on
 @echo Installing cowsay
 @echo off
-npm install cowsay 
+npm install cowsay
+@echo on
+@echo Installing figlet
+@echo off
+npm install figlet
 @echo on
 @echo Creating start.bat
 @echo off
