@@ -299,7 +299,11 @@ bot.on("message", message =>
             break;
 
         case "thisisfine":
-            message.channel.sendFile("./images/");
+            message.channel.sendFile("./images/thisisfine.png");
+            break;
+
+        case "gotme":
+            message.channel.sendFile("./images/gotme.jpg");
             break;
 
         default:
