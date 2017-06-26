@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const cowsay = require("cowsay");
 const figlet = require("figlet");
+const zalgo = require("zalgoo");
+const aesthetic = require("aesthetics");
 const config = require("./config.json");
 const bot = new Discord.Client();
 
@@ -296,6 +298,10 @@ bot.on("message", message =>
             message.channel.sendFile("./images/ree.jpg");
             break;
 
+        case "thisisfine":
+            message.channel.sendFile("./images/");
+            break;
+
         default:
             console.log("Unknown image!");
         }
@@ -342,7 +348,7 @@ bot.on("message", message =>
             message.delete();
             message.channel.send("", {embed:
             {
-                description: "```" + cowsay.say({text: construct(contents), W: 25}) + "```",
+                description: "```" + cowsay.say({text: construct(contents), W: 50}) + "```",
             }});
         }
         catch (e)
@@ -415,6 +421,7 @@ bot.on("message", message =>
 
     case "figlet":
         commandDebug(contents);
+        message.delete();
         figlet(construct(contents), function(err, data){
             if (err)
             {
@@ -422,7 +429,7 @@ bot.on("message", message =>
                     {
                         embed:
                         {
-                            description: "ERROR: Something fucked up",
+                            description: "ERROR: Something fucked up, check console for more details",
                             color: 0xFF0000
                         }
                     });
@@ -430,6 +437,46 @@ bot.on("message", message =>
             message.channel.send("```" + data + "```");
         });
 
+        break;
+
+    case "zalgo":
+        commandDebug(contents);
+        message.delete();
+        try
+        {
+            message.channel.send(zalgo(construct(contents)));
+        }
+        catch (e)
+        {
+            message.channel.send("",
+                {
+                    embed:
+                    {
+                        description: "ERROR: Probably sending too many characters, check console for more details",
+                        color: 0xFF0000
+                    }
+                });
+        }
+        break;
+
+    case "aesthetic":
+        commandDebug(contents);
+        message.delete();
+        try
+        {
+            message.channel.send(aesthetic(construct(contents)));
+        }
+        catch (e)
+        {
+            message.channel.send("",
+                {
+                    embed:
+                    {
+                        description: "ERROR: Something fucked up, check console for more details",
+                        color: 0xFF0000
+                    }
+                });
+        }
         break;
 
     default: // If we don't recognise the command, just break
