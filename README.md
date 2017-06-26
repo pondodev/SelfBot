@@ -21,6 +21,8 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
 - **~space [text]** Will make your text a e s t h e t i c
 - **~dongerMeDaddy** Will give you a random donger
 - **~figlet [text]** Will turn your text into ASCII art
+- **~zalgo [text]** Will make your text look all corrupted. Hack the planet!
+- **~aesthetic [text]** ｍａｋｅｓ　ｙｏｕｒ　ｔｅｘｔ　ｌｏｏｋ　ｌｉｋｅ　ｔｈｉｓ
 - **~img [imgName]** Will send the specified image. Current images supported are:
   - tuturu
   - lewd
@@ -62,3 +64,4 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
   - hug
   - panic
   - nonono
+  - thisisfine
