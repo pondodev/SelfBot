@@ -7,25 +7,9 @@ pause
 @echo off
 @echo {"token": [Your token here],"prefix":"~"}>config.json
 @echo on
-@echo Installing discord.js
+@echo Installing dependencies
 @echo off
-npm install --save discord.js
-@echo on
-@echo Installing cowsay
-@echo off
-npm install cowsay
-@echo on
-@echo Installing figlet
-@echo off
-npm install figlet
-@echo on
-@echo Installing zalgoo
-@echo off
-npm install zalgoo
-@echo on
-@echo Installing aesthetics
-@echo off
-npm install aesthetics
+npm install
 @echo on
 @echo Creating start.bat
 @echo off
