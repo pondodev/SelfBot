@@ -19,6 +19,14 @@ npm install cowsay
 @echo off
 npm install figlet
 @echo on
+@echo Installing zalgoo
+@echo off
+npm install zalgoo
+@echo on
+@echo Installing aesthetics
+@echo off
+npm install aesthetics
+@echo on
 @echo Creating start.bat
 @echo off
 @echo node selfbot.js>start.bat

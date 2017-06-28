@@ -438,7 +438,13 @@ bot.on("message", message =>
                         }
                     });
             }
-            message.channel.send("```" + data + "```");
+            message.channel.send("",
+                {
+                    embed:
+                    {
+                        description: "```" + data + "```"
+                    }
+                });
         });
 
         break;
