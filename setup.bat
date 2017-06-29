@@ -5,7 +5,7 @@
 pause
 @echo Creating config.json
 @echo off
-@echo {"token": [Your token here],"prefix":"~"}>config.json
+@echo {"token" : [Your token here],"prefix" : "~","googleAPIKey" : [Your API key here]}>config.json
 @echo on
 @echo Installing dependencies
 @echo off

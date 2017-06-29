@@ -9,6 +9,8 @@ I've tried making setting this bot up as simple as possible, but there's some st
 
 First, you need to get [node.js](https://nodejs.org/en/download/), then you can run `setup.bat` in the root directory. This will install discord.js and create the `config.json` file so that you can give the bot your token to log in. Once setup is complete, then you need to get your user token from Discord, which is easy enough. Inside the discord client press `Ctrl + Shift + I` to bring up the developers console. Then, navigate to `Local Storage`, then `https://discordapp.com`, and then finally click on the `Application` tab and locate the key with the name `token`. Then you just right click on the value next to it, click `Edit "Value"`, and then paste the token into `config.json` where it says `[Your token here]`. Once that's done, you can just open `start.bat` and the bot will load up and you're good to go!
 
+If you wish for `~yt` to work on this bot, you'll need to set up an API key for Google API. If you don't know how to do this, look it up it's not hard. If you can't figure out how to do it, you probably shouldn't be doing it. The API key you get will go into `config.json` under the `googleAPIKey` field.
+
 ### Commands
 I've defined `~` to be my prefix in `config.json`, so all commands listed here will be using that prefix
 - **~quoteme [text]** Will spit out `text` inside an embed
@@ -23,6 +25,7 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
 - **~figlet [text]** Will turn your text into ASCII art
 - **~zalgo [text]** Will make your text look all corrupted. Hack the planet!
 - **~aesthetic [text]** ｍａｋｅｓ　ｙｏｕｒ　ｔｅｘｔ　ｌｏｏｋ　ｌｉｋｅ　ｔｈｉｓ
+- **~yt [text]** Will search for a YouTube video you specify and then post the link. [WORK IN PROGRESS]
 - **~img [imgName]** Will send the specified image. Current images supported are:
   - tuturu
   - lewd

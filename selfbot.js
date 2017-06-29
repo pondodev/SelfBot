@@ -3,6 +3,7 @@ const cowsay = require("cowsay");
 const figlet = require("figlet");
 const zalgo = require("zalgoo");
 const aesthetic = require("aesthetics");
+const ytsearch = require("youtube-search");
 const config = require("./config.json");
 const bot = new Discord.Client();
 
@@ -487,6 +488,22 @@ bot.on("message", message =>
                     }
                 });
         }
+        break;
+
+    case "yt":
+        commandDebug(contents);
+        var opts = {
+            maxResults : 1,
+            key : config.googleAPIKey
+        };
+
+        ytsearch(construct(contents), opts, function(err, results)
+        {
+            if (err) return console.log(err);
+
+            message.channel.send(results[0].link);
+            //console.dir(results);
+        });
         break;
 
     default: // If we don't recognise the command, just break
