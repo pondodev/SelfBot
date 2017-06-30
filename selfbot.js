@@ -354,7 +354,16 @@ bot.on("message", message =>
             message.channel.send("", {embed:
             {
                 description: "```" + cowsay.say({text: construct(contents), W: 50}) + "```",
-            }});
+            }}).then(() => {}, () => {
+                message.channel.send("",
+                    {
+                        embed:
+                        {
+                            description: "**ERROR:** Too many characters!",
+                            color: 0xFF0000
+                        }
+                    });
+            });
         }
         catch (e)
         {
@@ -378,7 +387,16 @@ bot.on("message", message =>
             temp += messageStr[i] + " ";
         }
 
-        message.channel.send(temp);
+        message.channel.send(temp).then(() => {}, () => {
+            message.channel.send("",
+                {
+                    embed:
+                    {
+                        description: "**ERROR:** Too many characters!",
+                        color: 0xFF0000
+                    }
+                });
+        });
         break;
 
     case "dongerMeDaddy": // Posts a random donger for your memeing pleasure
@@ -430,6 +448,7 @@ bot.on("message", message =>
         figlet(construct(contents), function(err, data){
             if (err)
             {
+                console.log(err);
                 message.channel.send("",
                     {
                         embed:
@@ -453,41 +472,31 @@ bot.on("message", message =>
     case "zalgo":
         commandDebug(contents);
         message.delete();
-        try
-        {
-            message.channel.send(zalgo(construct(contents)));
-        }
-        catch (e)
-        {
+        message.channel.send(zalgo(construct(contents))).then(() => {}, () => {
             message.channel.send("",
                 {
                     embed:
                     {
-                        description: "ERROR: Probably sending too many characters, check console for more details",
+                        description: "**ERROR:** Too many characters!",
                         color: 0xFF0000
                     }
                 });
-        }
+        });
         break;
 
     case "aesthetic":
         commandDebug(contents);
         message.delete();
-        try
-        {
-            message.channel.send(aesthetic(construct(contents)));
-        }
-        catch (e)
-        {
+        message.channel.send(aesthetic(construct(contents))).then(() => {}, () => {
             message.channel.send("",
                 {
                     embed:
                     {
-                        description: "ERROR: Something fucked up, check console for more details",
+                        description: "**ERROR:** Too many characters!",
                         color: 0xFF0000
                     }
                 });
-        }
+        });
         break;
 
     case "yt":
