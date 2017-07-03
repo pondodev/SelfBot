@@ -26,6 +26,7 @@ I've defined `~` to be my prefix in `config.json`, so all commands listed here w
 - **~zalgo [text]** Will make your text look all corrupted. Hack the planet!
 - **~aesthetic [text]** ｍａｋｅｓ　ｙｏｕｒ　ｔｅｘｔ　ｌｏｏｋ　ｌｉｋｅ　ｔｈｉｓ
 - **~yt [text]** Will search for a YouTube video you specify and then post the link. [WORK IN PROGRESS]
+- **~ud [text]** Will send the definition for the word specified
 - **~img [imgName]** Will send the specified image. Current images supported are:
   - tuturu
   - lewd

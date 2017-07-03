@@ -4,6 +4,7 @@ const figlet = require("figlet");
 const zalgo = require("zalgoo");
 const aesthetic = require("aesthetics");
 const ytsearch = require("youtube-search");
+const ud = require("relevant-urban");
 const config = require("./config.json");
 const bot = new Discord.Client();
 
@@ -307,6 +308,10 @@ bot.on("message", message =>
             message.channel.sendFile("./images/gotme.jpg");
             break;
 
+        case "feelsbadman":
+            message.channel.sendFile("./images/feelsbadman.jpg");
+            break;
+
         default:
             console.log("Unknown image!");
         }
@@ -511,7 +516,35 @@ bot.on("message", message =>
             if (err) return console.log(err);
 
             message.channel.send(results[0].link);
-            //console.dir(results);
+        });
+        break;
+
+    case "ud":
+        commandDebug(contents);
+        ud(construct(contents)).then((udDef) => {
+            message.channel.send("",
+                {
+                    embed:
+                    {
+                        title: udDef.word,
+                        description: udDef.definition,
+                        color: 0xE86121,
+                        footer:
+                        {
+                            text: "Definition provided by Urban Dictionary",
+                            icon_url: "http://imgur.com/eO6bU2W"
+                        }
+                    }
+                });
+        }, () => {
+            message.channel.send("",
+                {
+                    embed:
+                    {
+                        description: "**ERROR:** No definition found!",
+                        color: 0xFF0000
+                    }
+                });
         });
         break;
 
